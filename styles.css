@@ -112,15 +112,18 @@ body {
 .watchist-button,
 .movie-content,
 .movie-header {
-    display: none;
+    display: flex;
 }
 
 .movie-container {
     justify-content: center;
     align-items: center;
-    margin: 3em 3em;
+    margin: 1em 3em;
     gap: 20px;
     line-height: 1.5;
+    grid-area: "content";
+    padding-bottom: 2em;
+    border-bottom: #D1D5DB 1px solid;
 }
 
 .movie-container img {
@@ -147,13 +150,23 @@ body {
     width: max-content;
 }
 
+.movie-search-area {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    margin-top: 3em;
+    width: 95%;
+    margin-right: 2em;
+}
+
 /* Default error */
 
 
 .does-not-exist {
     color: #DFDDDD;
     font-size: 1.5rem;
-    display: none;
+    display: none; /* Change this*/
     flex-direction: column;
     align-items: center;
     justify-content: center;
