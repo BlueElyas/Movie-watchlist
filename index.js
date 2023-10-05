@@ -14,11 +14,15 @@
 const searchInput = document.getElementById('search-input')
 const searchBtn = document.getElementById('submit-search')
 
-
+//RENDER RESULTS WITH s=? THEN RENDER EACH ONE WITH A FOR LOOP
 
 searchBtn.addEventListener('click', () => {
     let inputValue = searchInput.value
-    console.log(inputValue)
-    localStorage.setItem(inputValue, "test")
+    fetch(`http://www.omdbapi.com/?apikey=15e9726&s=${inputValue}`, {method: "GET"})
+    .then(res => res.json())
+    .then(data => {
+        data.Search.map(movies => console.log(movies.Title))
+    })
 })
 
+// localStorage.setItem(inputValue, "test")
