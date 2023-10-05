@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+/* header design */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 3em;
+}
+
+.header-image {
+    background-image: url(Images/40637dd9b0240098474b6d8dd9487d8c\ \(1\).png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 20%;
+    filter: brightness(20%);
+    height: 150px;
+    position: relative;
+}
+
+.header ul {
+    list-style: none;
+}
+
+.header ul a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-size: 0.8em;
+}
+
+.header h1 {
+    font-size: 2em;
+}
+
+/* SEARCH BAR */
+.search-bar {
+    position: relative;
+    width: max-content;
+    margin: -1.2em auto;
+    z-index: 2;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    width: 90%;
+}
+
+.search-bar input {
+    position: relative;
+    padding: 0.5em 2em;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    border: 1px solid #D1D5DB;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.search-bar button {
+    padding: 0.5em 1.5em;
+    margin: 0 0 0 -5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    background-color: #F9FAFB;
+    border: 1px solid #D1D5DB;
+}
+
+.search-bar i {
+    position: absolute;
+    z-index: 2;
+    top: 25%;
+    left: 2%;
+}
+
+/* Default message for finding movie */
+
+.default-text {
+    color: #DFDDDD;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 9em;
+    gap: 15px;
+}
+
+.default-text {
+    display: none;
+}
+
+/* Movie box container */
+
+.movie-container,
+.movie-details,
+.watchist-button,
+.movie-content,
+.movie-header {
+    display: none;
+}
+
+.movie-container {
+    justify-content: center;
+    align-items: center;
+    margin: 3em 3em;
+    gap: 20px;
+    line-height: 1.5;
+}
+
+.movie-container img {
+    width: 99px;
+    height: 147.411px;
+}
+
+.movie-content {
+    flex-direction: column;
+    gap: 7px;
+    font-size: 0.75rem;
+}
+
+.movie-details {
+    gap: 10px;
+}
+
+.movie-header {
+    align-items: center;
+    gap: 15px;
+}
+
+.watchist-button {
+    width: max-content;
+}
+
+/* Default error */
+
+
+.does-not-exist {
+    color: #DFDDDD;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 9em;
+    text-align: center;
+}
+
+/* Margin for content */
+
+.margin {
+    margin-left: 3em;
+    margin-right: 3em;
+}

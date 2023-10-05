@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Watchlist</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <header>
+        <div class="header-image"> <!--Header area--> </div>
+            <div class="header">
+                <h1>Find your film</h1>
+                <nav>
+                    <ul>
+                        <li><a href="pages/watchlist.html">My Watchlist</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="search-bar">
+
+                    <i class="fa-solid fa-magnifying-glass magnifier" style="color: #3e4b60;"></i>
+                    <input type="text" placeholder="Search for a movie" name="search">
+                    <button id="submit-search" type="button">Search</button>
+
+            </div>
+    </header>
+
+    <section class="default-text"> <!--Movie content with default start exploring-->
+        <i class="fa-solid fa-film fa-lg" style="color: #dfdddd;"></i>
+        <h6>Start exploring</h6>
+    </section>
+
+    <section class="does-not-exist"> <!--IF MOVE DOES NOT EXIST, THIS APPEARS-->
+        <h6>Unable to find what you are looking for. <br>Please try another search</h6>
+    </section>
+
+    <div class="movie-container" id="movie-container"> <!--wHAT A MOVIE SECTINO SHOULD LOOK LIKE-->
+        <img src="Images/40637dd9b0240098474b6d8dd9487d8c (1).png" alt="">
+        <div class="movie-content">
+            <div class="movie-header">
+                <h2>Blade Runner</h2>
+                <i class="fa-solid fa-star" style="color: #fec654;"></i>
+                <p>8.1</p>
+            </div>
+            <div class="movie-details" id="movie-details">
+                <p>117 min</p>
+                <p>Action, Drama, Sci-fi</p>
+                <div class="watchlist-button">
+                    <i class="fa-solid fa-circle-plus"></i>Watchlist</div>
+            </div>
+            <p>A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
+        </div>
+    </div>
 
 </body>
 </html>
