@@ -30,13 +30,14 @@ searchBtn.addEventListener('click', () => {
 })
 
 function renderItems(array) {
+    movieSearchArea.innerHTML = ""
     for (let movie of array) {
         fetch(`http://www.omdbapi.com/?apikey=15e9726&t=${movie.Title}`, {method: "GET"})
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 movieSearchArea.innerHTML += `
-                <div class="movie-container" id="movie-container">
+                <div class="movie-container" id="movie-container" >
                     <img src="${data.Poster}" alt="">
                     <div class="movie-content">
                         <div class="movie-header">
@@ -48,14 +49,25 @@ function renderItems(array) {
                             <p>${data.Runtime}</p>
                             <p>${data.Genre}</p>
                             <div class="watchlist-button">
-                                <i class="fa-solid fa-circle-plus"></i>Watchlist</div>
+                                <i class="fa-solid fa-circle-plus" id = "add-to-list"></i>Watchlist</div>
                         </div>
                         <p>${data.Plot}</p>
                     </div>
                 </div>
                 `
+                const addToListIcon = document.getElementById('add-to-list')
+                addToListIcon.addEventListener('click', () => {
+                    localStorage.setItem(data.Title, data.Title)
+                })
             })
+
     }
 }
+
+function addItem(e) {
+    console.log(e.target)
+}
+
+
 
 // localStorage.setItem(inputValue, "test")
