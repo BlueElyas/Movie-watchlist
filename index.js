@@ -7,8 +7,6 @@
 // If it works, save to local storage
 // If not, display error message
 
-let arrayOfMovies = []
-
 // When on watchlist, take any items from local storage and display on screen
 // If an item is removed, remove from local storage and unrender
 
@@ -30,44 +28,46 @@ searchBtn.addEventListener('click', () => {
 })
 
 function renderItems(array) {
-    movieSearchArea.innerHTML = ""
     for (let movie of array) {
-        fetch(`http://www.omdbapi.com/?apikey=15e9726&t=${movie.Title}`, {method: "GET"})
+        fetch(`http://www.omdbapi.com/?apikey=15e9726&t=${movie.Title}`, { method: "GET" })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                movieSearchArea.innerHTML += `
-                <div class="movie-container" id="movie-container" >
-                    <img src="${data.Poster}" alt="">
-                    <div class="movie-content">
-                        <div class="movie-header">
-                            <h2>${data.Title}</h2>
-                            <i class="fa-solid fa-star" style="color: #fec654;"></i>
-                            <p>${data.imdbRating}</p>
-                        </div>
-                        <div class="movie-details" id="movie-details">
-                            <p>${data.Runtime}</p>
-                            <p>${data.Genre}</p>
-                            <div class="watchlist-button">
-                                <i class="fa-solid fa-circle-plus" id = "add-to-list"></i>Watchlist</div>
-                        </div>
-                        <p>${data.Plot}</p>
+                const movieContainer = document.createElement('div')
+                movieContainer.classList.add('movie-container')
+                movieContainer.innerHTML = `
+                <img src="${data.Poster}" alt="">
+                <div class="movie-content">
+                    <div class="movie-header">
+                        <h2>${data.Title}</h2>
+                        <i class="fa-solid fa-star" style="color: #fec654;"></i>
+                        <p>${data.imdbRating}</p>
                     </div>
+                    <div class="movie-details">
+                        <p>${data.Runtime}</p>
+                        <p>${data.Genre}</p>
+                        <div class="watchlist-button">
+                            <i class="fa-solid fa-circle-plus add-to-list" data-title="${data.Title}"></i>Watchlist
+                        </div>
+                    </div>
+                    <p>${data.Plot}</p>
                 </div>
                 `
-                const addToListIcon = document.getElementById('add-to-list')
+
+                movieSearchArea.appendChild(movieContainer);
+                const addToListIcon = movieContainer.querySelector('.add-to-list')
+
                 addToListIcon.addEventListener('click', () => {
-                    localStorage.setItem(data.Title, data.Title)
+                    const movieTitle = addToListIcon.getAttribute('data-title')
+                    localStorage.setItem(movieTitle, movieTitle)
                 })
             })
-
     }
 }
 
-function addItem(e) {
-    console.log(e.target)
-}
 
+function renderWatchlist() {
+
+}
 
 
 // localStorage.setItem(inputValue, "test")
