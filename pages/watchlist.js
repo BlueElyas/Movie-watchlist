@@ -2,7 +2,9 @@
 const watchListArea = document.getElementById('watchlist-area')
 
 function renderWatchlist() {
+    console.log(Object.keys(localStorage))
     const watchlistMovies = Object.keys(localStorage).filter(key => key.startsWith('watchlist_')).map(key => localStorage.getItem(key))
+    console.log(watchlistMovies)
 
     watchlistMovies.forEach(movieTitle => {
         fetch(`https://www.omdbapi.com/?apikey=15e9726&t=${movieTitle}`, { method: "GET" })

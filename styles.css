@@ -170,6 +170,34 @@ body {
     text-align: center;
 }
 
+/* Default message in watchlist area */
+
+.default-watchlist-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20em;
+    gap: 10px;
+}
+
+.default-watchlist-msg h3 {
+    color: #787878;
+    font-size: 2rem;
+}
+
+.default-watchlist-msg div {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.default-watchlist-msg div p {
+    color: #363636;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
 
 
 /* Cursor settings */
