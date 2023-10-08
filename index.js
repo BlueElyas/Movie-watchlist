@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 defaultMovies.style.display = 'none'
                 if(data.Response === 'True') {
                     renderItems(data.Search)
+                    doesNotExist.style.display = 'none'
                 } else {
                     doesNotExist.style.display = 'flex'
                 }
