@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (searchBtn) {
         searchBtn.addEventListener('click', () => {
             const inputValue = searchInput.value
-            fetch(`http://www.omdbapi.com/?apikey=15e9726&s=${inputValue}`, {method: "GET"})
+            fetch(`https://www.omdbapi.com/?apikey=15e9726&s=${inputValue}`, {method: "GET"})
             .then(res => res.json())
             .then(data => {
                 renderItems(data.Search)
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function renderItems(array) {
         for (let movie of array) {
-            fetch(`http://www.omdbapi.com/?apikey=15e9726&t=${movie.Title}`, { method: "GET" })
+            fetch(`https://www.omdbapi.com/?apikey=15e9726&t=${movie.Title}`, { method: "GET" })
                 .then(res => res.json())
                 .then(data => {
                     const movieContainer = document.createElement('div')
@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log(movieWatch)
         console.log('movieWatch:', movieWatch);
         console.log('watchListArea:', watchListArea)
-        fetch(`http://www.omdbapi.com/?apikey=15e9726&t=${movieWatch}`, { method: "GET" })
+        fetch(`https://www.omdbapi.com/?apikey=15e9726&t=${movieWatch}`, { method: "GET" })
         .then(res => res.json())
         .then(data => {
             console.log(data)
