@@ -4,15 +4,23 @@ window.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input')
     const searchBtn = document.getElementById('submit-search')
     const movieSearchArea = document.getElementById('movie-search-area')
+    const defaultMovies = document.getElementById('default-text')
+    const doesNotExist = document.getElementById('does-not-exist')
 
 
     if (searchBtn) {
         searchBtn.addEventListener('click', () => {
             const inputValue = searchInput.value
             fetch(`https://www.omdbapi.com/?apikey=15e9726&s=${inputValue}`, {method: "GET"})
-            .then(res => res.json())
+            .then(res =>res.json())
             .then(data => {
-                renderItems(data.Search)
+                movieSearchArea.innerHTML = ''
+                defaultMovies.style.display = 'none'
+                if(data.Response === 'True') {
+                    renderItems(data.Search)
+                } else {
+                    doesNotExist.style.display = 'flex'
+                }
             })
         })
     }
